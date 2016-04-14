@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Touchnote Front End Test">
+    <title>Touchnote Front End Test</title>
+    <link href="https://www.touchnote.com/assets/images/favicon.ico" type="image/x-icon" rel="icon">
+    <!-- CSS AND STYLING -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Include Bootstrap CSS CDN link FOR MODAL -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../app/production/css/style.min.css">
+    <!-- ANGULAR FILES -->
+    <script src="/node_modules/angular/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- UI BOOTSTRAP LIBRARY FOR MODAL-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.1/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="/node_modules/angular-route/angular-route.min.js"></script>
+
+    <script src="../app/js/app.js"></script>
+    <script src="../app/js/config.js"></script>
+    <script src="../app/js/EvernoteAppController.js"></script>
+    <!-- // <script src="../app/production/js/app.min.js"></script> -->
+</head>
+
+<body data-ng-app="touchnoteApp">
+    
+    <noscript>
+        For full functionality of this site it is necessary to enable JavaScript.
+        Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+        instructions how to enable JavaScript in your web browser</a>.
+    </noscript>
+
+    <div id="app-page">  
+        <!-- ANGULAR VIEWS -->
+        <div data-ng-view></div>
+    </div>
+<!-- USED FOR THE GRUNTFILE  -->
+<script src="//localhost:35729/livereload.js"></script>
+</body>
+</html>

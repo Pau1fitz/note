@@ -1,0 +1,195 @@
+//Main SASS file
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Imports the style
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@import 'imports';
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Style
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@font-face {
+  font-family: 'Bariol';
+  src:  url('/../bariol.otf')
+}
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, img, ol, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+body {
+  font-size: $size-1;
+  background: $color-light;
+  color: $color-dark;
+  font-family: $family-1;
+  font-weight: 400; 
+  line-height: 1;
+}
+
+form {
+            background-color: #fff;
+            padding: 15px 0;
+            border-radius: 10px;
+
+            .recipientName input,
+            .addressLineOne input,
+            .addressTown input {
+                margin: 0 0 1em;
+                padding: 1em;
+                border: 2px solid #c5c9d9;
+                border-radius: 8px;
+                width: 50%;
+            }
+
+            .countrySelect select {
+                box-shadow: none;
+                background: #ebeff0;
+                border: none;
+                border-radius: 4px;
+                font-size: 14px;
+                line-height: 1.3333333;
+                font-family: $family-1;
+                margin-bottom: 10px;
+                color: #555;
+                width: 50%;
+                margin: 0 0 1em;
+                padding: 1em;
+            }
+
+            .save-btn {
+                background: #d60b44;
+                border: 2px solid #d60b44;
+                color: #fff;
+                border-radius: 8px;
+                padding: 10px 16px;
+                font-size: 18px;
+                line-height: 1.3333333;
+                font-family: $family-1;
+            }
+
+            .cancel-btn {
+                border: 2px solid #0bb5fd;
+                color: #0bb5fd;
+                background-color: transparent;
+                border-radius: 8px;
+                padding: 10px 16px;
+                font-size: 18px;
+                line-height: 1.3333333;
+                font-family: $family-1;
+            }
+
+            .cancel-btn:hover {
+                background: #0bb5fd;
+                border: 2px solid #0bb5fd;
+                border-color: #0bb5fd;
+                color: #f2f2f2;
+                border-radius: 8px;
+                padding: 10px 16px;
+                font-size: 18px;
+                line-height: 1.3333333;
+                font-family: $family-1;
+            }
+    
+        }
+
+#app-page{ 
+
+    .addressBook {
+        max-width: px(860);
+        background: #ebeff0;
+        border-radius: px(10);
+        margin-top: px(50);
+        margin-bottom: px(50);
+        margin: 0 auto;
+        padding: px(10);
+
+        .addressBookHeader {
+            margin-bottom: 15px;
+        }
+
+        .addressBookHeading {
+            color: #0bb5fd;
+            font-size: 26px;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        .addressBookParagraph {
+            color: #0bb5fd;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        .enterNewAddressBtn {
+            background-color: #00B7ff;
+            color: #FFF;
+            padding: 10px 20px 10px 10px;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .contactHolder {
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 15px 0px;
+        }
+
+        .contactName {
+            color: #0bb5fd;
+            font-size: 14px;
+            padding: 15px;
+        }
+
+        .contactAddress,
+        .contactTown,
+        .contactCountry {
+            color: #0bb5fd;
+            font-size: 14px;
+            padding: 0px 15px;
+        }
+
+        .editContactBtn {
+            border: 2px solid #0bb5fd;
+            color: #0bb5fd;
+            background-color: transparent;
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-size: 14px;
+            line-height: 1.3333333;
+            font-family: $family-1;
+            margin: 15px;
+        }
+
+        .deleteContactBtn {
+            background: #d60b44;
+            border: 2px solid #d60b44;
+            color: #fff;
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-size: 14px;
+            line-height: 1.3333333;
+            font-family: $family-1;
+            margin-top: 15px;
+        }
+
+    }
+
+}
+
