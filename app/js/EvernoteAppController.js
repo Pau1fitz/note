@@ -1,88 +1,44 @@
 'use strict';
 
-app.factory('addressFactory', function(){
-    var addressFactory = {};
-    addressFactory.addressBook = [];
-
-    addressFactory.saveAddress = function(index, name, address, town, country){
-        messages.addressBook.push({
-            id: index,
-            name: name, 
-            address: address, 
-            town: town, 
-            country: country
-        });
-        localStorage.setItem('addressBook', JSON.stringify(messages.addressBook));
-        $location.path('address-book');
-    };
-
-    addressFactory.deleteAddress = function(index) {
-        messages.addressBook.splice(index, 1); 
-        localStorage.setItem('addressBook', JSON.stringify(messages.addressBook)); 
-    }
-
-    addressFactory.init = function() {
-        addressFactory.savedAddresses =  localStorage.getItem("addressBook");
-        addressFactory.addressBook = (localStorage.getItem('addressBook')!==null) ? JSON.parse(this.savedAddresses) : [ {id: 1, name: 'Paul Fitzgerald', address: "22 Sancroft Street", town: "London", country: "United Kingdom"}];
-        localStorage.setItem('addressBook', JSON.stringify(addressFactory.addressBook));
-    }
-
-    return addressFactory;
-})
-
-app.controller('touchnoteCtrl', ['$routeParams', '$location','$uibModal', 'addressFactory', function ($routeParams, $location, $uibModal, addressFactory) {
+app.controller('touchnoteCtrl', ['$routeParams','$uibModal', 'addressFactory', function ($routeParams, $uibModal, addressFactory) {
 
     var touchnoteCtrl = this;
+    this.addressBook = addressFactory.addressBook;
 
-    this.countries = [
-        {name: "United Kingdom"},
-        {name: "Ireland"},
-        {name: "United States of America"}
-    ];
-
-    
-
-    //initialization function. If address book 
-    //doesn't exist create it and add a contact
     this.init = function() {
-        console.log(addressFactory)
         addressFactory.init();
         this.addressBook = addressFactory.addressBook;
-        //retrieve all saved addresses from address book
-        // touchnoteCtrl.savedAddresses = localStorage.getItem("addressBook");
-        //create a  new contact 
-        // touchnoteCtrl.addressBook = (localStorage.getItem('addressBook')!==null) ? JSON.parse(this.savedAddresses) : [ {id: 1, name: 'Paul Fitzgerald', address: "22 Sancroft Street", town: "London", country: "United Kingdom"}];
-        //add item to local storage if none have been created yet
-        // localStorage.setItem('addressBook', JSON.stringify(touchnoteCtrl.addressBook));
     }
 
-    // this.saveAddress = addressFactory.saveAddress(index, name, address, town, country)
-
-    //add address to Address Book and Local Storage
-    // this.saveAddress = function(index, name, address, town, country) {
-    //     this.addressBook.push({
-    //         id: index,
-    //         name: name, 
-    //         address: address, 
-    //         town: town, 
-    //         country: country
-    //     })
-
-    //     localStorage.setItem('addressBook', JSON.stringify(this.addressBook));
-    //     $location.path('address-book');
-    // }
-
-    // this.deleteAddress = function(index) {
-    //     this.addressBook.splice(index, 1); 
-    //     localStorage.setItem('addressBook', JSON.stringify(this.addressBook));    
-    // }
-
+    this.deleteAddress = function(index){
+        addressFactory.deleteAddress(index);
+    };
 
     this.open = function () {
         touchnoteCtrl.modalInstance = $uibModal.open({
-          templateUrl: 'app/views/partials/form.html',
-          controller: 'ModalCtrl',
-          controllerAs:'modal',
+            templateUrl: 'app/views/partials/add-address.html',
+            controller: 'ModalCtrl',
+            controllerAs:'ctrl',
+            resolve: {
+                //this is used to prevent angular throwing an error
+                editIndex: function () {
+                    return undefined;
+                }
+           }
+        });
+    }
+
+    this.openEdit = function(index) {
+        touchnoteCtrl.modalInstance = $uibModal.open({
+            templateUrl: 'app/views/partials/edit-address.html',
+            controller: 'ModalCtrl',
+            controllerAs:'ctrl',
+            resolve: {
+                //this is used to access the index in the modalCtrl
+                editIndex: function () {
+                    return index;
+                }
+           }
         });
     }
 
@@ -90,7 +46,22 @@ app.controller('touchnoteCtrl', ['$routeParams', '$location','$uibModal', 'addre
 
 }])
 
-.controller('ModalCtrl', ['$uibModalInstance', function ( $uibModalInstance) {
+.controller('ModalCtrl', ['$uibModalInstance','addressFactory','editIndex', function ($uibModalInstance,addressFactory, editIndex) {
+
+    this.addressBook = addressFactory.addressBook;
+    this.countries = addressFactory.countries;
+
+    this.saveAddress = function( name, address, town) {
+        addressFactory.saveAddress( name, address, town);
+        $uibModalInstance.dismiss('cancel');
+    }
+
+    this.getIndex = editIndex;
+
+    this.updateAddress = function(name, address, town, index) {
+        addressFactory.updateAddress( name, address, town, index);
+        $uibModalInstance.dismiss('cancel');
+    }
 
     this.cancelAddress = function () {
         $uibModalInstance.dismiss('cancel');

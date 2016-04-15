@@ -1,0 +1,6 @@
+<h3>Edit address</h3>
+<div ng-include="'app/views/partials/form.html'"></div>
+<div>
+    <button class="cancel-btn" ng-click="ctrl.cancelAddress()">Cancel</button>
+    <button class="save-btn" ng-click="ctrl.updateAddress(ctrl.name, ctrl.address, ctrl.town, ctrl.getIndex)">Save</button>
+</div>

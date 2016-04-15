@@ -3,12 +3,6 @@
         <input ng-model="ctrl.name" type="text" name="RecipientName" placeholder="Recipient name">
         <label placeholder="Recipient name" alt="Recipient name"></label>
     </div>
-        
-    <div class="countrySelect">
-        <select ng-model="ctrl.country" ng-options="country.name for country in ctrl.countries">
-            <option value="">--Choose a country--</option>
-        </select>
-    </div>
 
     <div class="addressLineOne">
         <input ng-model="ctrl.address" type="text" name="AddressLineOne" placeholder="Line 1">
@@ -20,8 +14,8 @@
         <label placeholder="Town" alt="Town"></label>
     </div>
 
-    <div>
-        <button class="cancel-btn" ng-click="modal.cancelAddress()">Cancel</button>
-        <button class="save-btn" ng-click="ctrl.saveAddress(id, ctrl.name, ctrl.address, ctrl.town, ctrl.country.name)">Save</button>
-    </div>
+<!--     <div>
+        <button class="cancel-btn" ng-click="ctrl.cancelAddress()">Cancel</button>
+        <button class="save-btn" ng-click="ctrl.saveAddress(ctrl.name, ctrl.address, ctrl.town, ctrl.country.name)">Save</button>
+    </div> -->
 </form>

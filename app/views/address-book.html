@@ -19,7 +19,7 @@
                         <p class="contactAddress">{{contact.address}}</p>
                         <p class="contactTown">{{contact.town}}</p>
                         <p class="contactCountry">{{contact.country}}</p>
-                        <button ng-click="ctrl.open()" class="editContactBtn">Edit Contact</button>
+                        <button ng-click="ctrl.openEdit($index)" class="editContactBtn">Edit Contact</button>
                         <button ng-click="ctrl.deleteAddress($index)" class="deleteContactBtn">Delete Contact</button>
                     </div>
                 </div>
