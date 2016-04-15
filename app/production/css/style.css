@@ -44,51 +44,6 @@ form .addressTown input {
   border-radius: 8px;
   width: 50%;
 }
-form .countrySelect select {
-  box-shadow: none;
-  background: #ebeff0;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 1.3333333;
-  font-family: "Bariol", Helvetica, Arial, sans-serif;
-  margin-bottom: 10px;
-  color: #555;
-  width: 50%;
-  margin: 0 0 1em;
-  padding: 1em;
-}
-form .save-btn {
-  background: #d60b44;
-  border: 2px solid #d60b44;
-  color: #fff;
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.3333333;
-  font-family: "Bariol", Helvetica, Arial, sans-serif;
-}
-form .cancel-btn {
-  border: 2px solid #0bb5fd;
-  color: #0bb5fd;
-  background-color: transparent;
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.3333333;
-  font-family: "Bariol", Helvetica, Arial, sans-serif;
-}
-form .cancel-btn:hover {
-  background: #0bb5fd;
-  border: 2px solid #0bb5fd;
-  border-color: #0bb5fd;
-  color: #f2f2f2;
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.3333333;
-  font-family: "Bariol", Helvetica, Arial, sans-serif;
-}
 
 #app-page .addressBook {
   max-width: 860px;
@@ -158,6 +113,82 @@ form .cancel-btn:hover {
   line-height: 1.3333333;
   font-family: "Bariol", Helvetica, Arial, sans-serif;
   margin-top: 15px;
+}
+
+#addAddressModal .addContactHeader {
+  color: #0bb5fd;
+  font-size: 26px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+#addAddressModal .save-btn {
+  background: #d60b44;
+  border: 2px solid #d60b44;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  font-family: "Bariol", Helvetica, Arial, sans-serif;
+}
+#addAddressModal .cancel-btn {
+  border: 2px solid #0bb5fd;
+  color: #0bb5fd;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  font-family: "Bariol", Helvetica, Arial, sans-serif;
+}
+#addAddressModal .cancel-btn:hover {
+  background: #0bb5fd;
+  border: 2px solid #0bb5fd;
+  border-color: #0bb5fd;
+  color: #f2f2f2;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  font-family: "Bariol", Helvetica, Arial, sans-serif;
+}
+
+#editAddressModal .editContactHeader {
+  color: #0bb5fd;
+  font-size: 26px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+#editAddressModal .save-btn {
+  background: #d60b44;
+  border: 2px solid #d60b44;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  font-family: "Bariol", Helvetica, Arial, sans-serif;
+}
+#editAddressModal .cancel-btn {
+  border: 2px solid #0bb5fd;
+  color: #0bb5fd;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  font-family: "Bariol", Helvetica, Arial, sans-serif;
+}
+#editAddressModal .cancel-btn:hover {
+  background: #0bb5fd;
+  border: 2px solid #0bb5fd;
+  border-color: #0bb5fd;
+  color: #f2f2f2;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  font-family: "Bariol", Helvetica, Arial, sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */
